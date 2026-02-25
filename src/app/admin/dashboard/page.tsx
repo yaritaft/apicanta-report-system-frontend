@@ -6,6 +6,7 @@ import { DevToolbar } from "@/components/admin/dev-toolbar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { RefreshCw } from "lucide-react";
+import { isDev } from "@/lib/env";
 
 export default function DashboardPage() {
   const { data, isLoading, refresh, useMock, toggleMock } =
@@ -13,11 +14,13 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-4">
-      <DevToolbar
-        onMockToggle={toggleMock}
-        isMockActive={useMock}
-        onRefresh={refresh}
-      />
+      {isDev && (
+        <DevToolbar
+          onMockToggle={toggleMock}
+          isMockActive={useMock}
+          onRefresh={refresh}
+        />
+      )}
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
