@@ -130,14 +130,11 @@ npm install
 
 **2. Configurar variables de entorno**
 
-Crear un archivo `.env` en la raíz:
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:3000
-NEXT_PUBLIC_ENV=development
-NEXT_PUBLIC_ADMIN_USERNAME=admin
-NEXT_PUBLIC_ADMIN_PASSWORD=tu_password
+```bash
+cp .env.example .env
 ```
+
+Editar `.env` con tus valores (ver `.env.example` para referencia).
 
 **3. Iniciar el servidor de desarrollo**
 
