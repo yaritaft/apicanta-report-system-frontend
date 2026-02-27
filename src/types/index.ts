@@ -12,7 +12,7 @@ export interface Student {
 export interface JsonSchemaField {
   name: string;
   label: string;
-  type: "text" | "number" | "select";
+  type: "text" | "number" | "select" | "textarea";
   required: boolean;
   options?: string[];
 }

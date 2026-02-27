@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { JsonSchemaField } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -75,6 +76,17 @@ export function DynamicForm({ fields, onSubmit }: DynamicFormProps) {
               value={values[field.name]}
               onChange={(e) => handleChange(field.name, e.target.value)}
               required={field.required}
+            />
+          )}
+
+          {field.type === "textarea" && (
+            <Textarea
+              id={field.name}
+              value={values[field.name]}
+              onChange={(e) => handleChange(field.name, e.target.value)}
+              required={field.required}
+              rows={4}
+              className="resize-none"
             />
           )}
 
