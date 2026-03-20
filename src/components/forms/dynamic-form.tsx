@@ -75,6 +75,7 @@ export function DynamicForm({ fields, onSubmit }: DynamicFormProps) {
               type="number"
               value={values[field.name]}
               onChange={(e) => handleChange(field.name, e.target.value)}
+              onWheel={(e) => e.currentTarget.blur()}
               required={field.required}
             />
           )}
